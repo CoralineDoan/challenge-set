@@ -166,4 +166,418 @@ DeepL_syn <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
 DeepL_perc_syn <- (DeepL_syn/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
                                             challenge_set$Difficulty == "Syntactic"))))*100
 
-###
+### lexical ambiguities ###
+SMT_lex_amb <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                         challenge_set$Difficulty == "Lexical" &
+                         challenge_set$Classification == "Ambiguity" &
+                         challenge_set$Code == 1))
+SMT_perc_lex_amb <- (SMT_lex_amb/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                        challenge_set$Difficulty == "Lexical" &
+                                          challenge_set$Classification == "Ambiguity"))))*100
+
+CNN_lex_amb <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                             challenge_set$Difficulty == "Lexical" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Code == 1))
+CNN_perc_lex_amb <- (CNN_lex_amb/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                challenge_set$Difficulty == "Lexical" &
+                                                challenge_set$Classification == "Ambiguity"))))*100
+
+RNN_lex_amb <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                             challenge_set$Difficulty == "Lexical" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Code == 1))
+RNN_perc_lex_amb <- (RNN_lex_amb/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                challenge_set$Difficulty == "Lexical" &
+                                                challenge_set$Classification == "Ambiguity"))))*100
+
+Att_lex_amb <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                             challenge_set$Difficulty == "Lexical" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Code == 1))
+Att_perc_lex_amb <- (Att_lex_amb/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                challenge_set$Difficulty == "Lexical" &
+                                                challenge_set$Classification == "Ambiguity"))))*100
+
+Google_lex_amb <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                             challenge_set$Difficulty == "Lexical" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Code == 1))
+Google_perc_lex_amb <- (Google_lex_amb/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                challenge_set$Difficulty == "Lexical" &
+                                                challenge_set$Classification == "Ambiguity"))))*100
+
+DeepL_lex_amb <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                             challenge_set$Difficulty == "Lexical" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Code == 1))
+DeepL_perc_lex_amb <- (DeepL_lex_amb/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                challenge_set$Difficulty == "Lexical" &
+                                                challenge_set$Classification == "Ambiguity"))))*100
+
+### homographs ###
+SMT_homograph <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                             challenge_set$Difficulty == "Lexical" &
+                             challenge_set$Classification == "Homographs" &
+                             challenge_set$Code == 1))
+SMT_perc_homograph <- (SMT_homograph/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                challenge_set$Difficulty == "Lexical" &
+                                                challenge_set$Classification == "Homographs"))))*100
+
+CNN_homograph <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                               challenge_set$Difficulty == "Lexical" &
+                               challenge_set$Classification == "Homographs" &
+                               challenge_set$Code == 1))
+CNN_perc_homograph <- (CNN_homograph/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                  challenge_set$Difficulty == "Lexical" &
+                                                  challenge_set$Classification == "Homographs"))))*100
+
+RNN_homograph <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                               challenge_set$Difficulty == "Lexical" &
+                               challenge_set$Classification == "Homographs" &
+                               challenge_set$Code == 1))
+RNN_perc_homograph <- (RNN_homograph/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                    challenge_set$Difficulty == "Lexical" &
+                                                    challenge_set$Classification == "Homographs"))))*100
+
+Att_homograph <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                               challenge_set$Difficulty == "Lexical" &
+                               challenge_set$Classification == "Homographs" &
+                               challenge_set$Code == 1))
+Att_perc_homograph <- (Att_homograph/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                    challenge_set$Difficulty == "Lexical" &
+                                                    challenge_set$Classification == "Homographs"))))*100
+
+Google_homograph <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                               challenge_set$Difficulty == "Lexical" &
+                               challenge_set$Classification == "Homographs" &
+                               challenge_set$Code == 1))
+Google_perc_homograph <- (Google_homograph/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                    challenge_set$Difficulty == "Lexical" &
+                                                    challenge_set$Classification == "Homographs"))))*100
+
+DeepL_homograph <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                               challenge_set$Difficulty == "Lexical" &
+                               challenge_set$Classification == "Homographs" &
+                               challenge_set$Code == 1))
+DeepL_perc_homograph <- (Att_homograph/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                    challenge_set$Difficulty == "Lexical" &
+                                                    challenge_set$Classification == "Homographs"))))*100
+
+### scope-related challenges ###
+SMT_scope <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                               challenge_set$Difficulty == "Syntactic" &
+                               challenge_set$Classification == "Scope" &
+                               challenge_set$Code == 1))
+SMT_perc_scope <- (SMT_scope/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                    challenge_set$Difficulty == "Syntactic" &
+                                                    challenge_set$Classification == "Scope"))))*100
+
+CNN_scope <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                           challenge_set$Difficulty == "Syntactic" &
+                           challenge_set$Classification == "Scope" &
+                           challenge_set$Code == 1))
+CNN_perc_scope <- (CNN_scope/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                            challenge_set$Difficulty == "Syntactic" &
+                                            challenge_set$Classification == "Scope"))))*100
+
+RNN_scope <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                           challenge_set$Difficulty == "Syntactic" &
+                           challenge_set$Classification == "Scope" &
+                           challenge_set$Code == 1))
+RNN_perc_scope <- (RNN_scope/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                            challenge_set$Difficulty == "Syntactic" &
+                                            challenge_set$Classification == "Scope"))))*100
+
+Att_scope <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                           challenge_set$Difficulty == "Syntactic" &
+                           challenge_set$Classification == "Scope" &
+                           challenge_set$Code == 1))
+Att_perc_scope <- (Att_scope/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                            challenge_set$Difficulty == "Syntactic" &
+                                            challenge_set$Classification == "Scope"))))*100
+
+Google_scope <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                           challenge_set$Difficulty == "Syntactic" &
+                           challenge_set$Classification == "Scope" &
+                           challenge_set$Code == 1))
+Google_perc_scope <- (Google_scope/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                            challenge_set$Difficulty == "Syntactic" &
+                                            challenge_set$Classification == "Scope"))))*100
+
+DeepL_scope <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                           challenge_set$Difficulty == "Syntactic" &
+                           challenge_set$Classification == "Scope" &
+                           challenge_set$Code == 1))
+DeepL_perc_scope <- (DeepL_scope/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                            challenge_set$Difficulty == "Syntactic" &
+                                            challenge_set$Classification == "Scope"))))*100
+
+### anaphora ###
+SMT_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                           challenge_set$Difficulty == "Syntactic" &
+                           challenge_set$Classification == "Anaphora" &
+                           challenge_set$Code == 1))
+SMT_perc_anaphora <- (SMT_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                            challenge_set$Difficulty == "Syntactic" &
+                                            challenge_set$Classification == "Anaphora"))))*100
+
+CNN_anaphora <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Code == 1))
+CNN_perc_anaphora <- (CNN_anaphora/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora"))))*100
+
+RNN_anaphora <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Code == 1))
+RNN_perc_anaphora <- (RNN_anaphora/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora"))))*100
+
+Att_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Code == 1))
+Att_perc_anaphora <- (Att_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora"))))*100
+
+Google_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Code == 1))
+Google_perc_anaphora <- (Google_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora"))))*100
+
+DeepL_anaphora <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                                 challenge_set$Difficulty == "Syntactic" &
+                                 challenge_set$Classification == "Anaphora" &
+                                 challenge_set$Code == 1))
+DeepL_perc_anaphora <- (DeepL_anaphora/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                        challenge_set$Difficulty == "Syntactic" &
+                                                        challenge_set$Classification == "Anaphora"))))*100
+
+### anaphora with interruption ###
+SMT_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "Y" &
+                              challenge_set$Code == 1))
+SMT_perc_anaphora <- (SMT_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "Y"))))*100
+
+CNN_anaphora <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "Y" &
+                              challenge_set$Code == 1))
+CNN_perc_anaphora <- (CNN_anaphora/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "Y"))))*100
+
+RNN_anaphora <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "Y" &
+                              challenge_set$Code == 1))
+RNN_perc_anaphora <- (RNN_anaphora/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "Y"))))*100
+
+Att_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "Y" &
+                              challenge_set$Code == 1))
+Att_perc_anaphora <- (Att_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "Y"))))*100
+
+Google_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                                 challenge_set$Difficulty == "Syntactic" &
+                                 challenge_set$Classification == "Anaphora" &
+                                 challenge_set$Interrupted == "Y" &
+                                 challenge_set$Code == 1))
+Google_perc_anaphora <- (Google_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                        challenge_set$Difficulty == "Syntactic" &
+                                                        challenge_set$Classification == "Anaphora" &
+                                                        challenge_set$Interrupted == "Y"))))*100
+
+DeepL_anaphora <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                                challenge_set$Difficulty == "Syntactic" &
+                                challenge_set$Classification == "Anaphora" &
+                                challenge_set$Interrupted == "Y" &
+                                challenge_set$Code == 1))
+DeepL_perc_anaphora <- (DeepL_anaphora/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                      challenge_set$Difficulty == "Syntactic" &
+                                                      challenge_set$Classification == "Anaphora" &
+                                                      challenge_set$Interrupted == "Y"))))*100
+
+### anaphora without interruption ###
+SMT_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "N" &
+                              challenge_set$Code == 1))
+SMT_perc_anaphora <- (SMT_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "N"))))*100
+
+CNN_anaphora <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "N" &
+                              challenge_set$Code == 1))
+CNN_perc_anaphora <- (CNN_anaphora/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "N"))))*100
+
+RNN_anaphora <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "N" &
+                              challenge_set$Code == 1))
+RNN_perc_anaphora <- (RNN_anaphora/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "N"))))*100
+
+Att_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                              challenge_set$Difficulty == "Syntactic" &
+                              challenge_set$Classification == "Anaphora" &
+                              challenge_set$Interrupted == "N" &
+                              challenge_set$Code == 1))
+Att_perc_anaphora <- (Att_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                  challenge_set$Difficulty == "Syntactic" &
+                                                  challenge_set$Classification == "Anaphora" &
+                                                  challenge_set$Interrupted == "N"))))*100
+
+Google_anaphora <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                                 challenge_set$Difficulty == "Syntactic" &
+                                 challenge_set$Classification == "Anaphora" &
+                                 challenge_set$Interrupted == "N" &
+                                 challenge_set$Code == 1))
+Google_perc_anaphora <- (Google_anaphora/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                        challenge_set$Difficulty == "Syntactic" &
+                                                        challenge_set$Classification == "Anaphora" &
+                                                        challenge_set$Interrupted == "N"))))*100
+
+DeepL_anaphora <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                                challenge_set$Difficulty == "Syntactic" &
+                                challenge_set$Classification == "Anaphora" &
+                                challenge_set$Interrupted == "N" &
+                                challenge_set$Code == 1))
+DeepL_perc_anaphora <- (DeepL_anaphora/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                      challenge_set$Difficulty == "Syntactic" &
+                                                      challenge_set$Classification == "Anaphora" &
+                                                      challenge_set$Interrupted == "N"))))*100
+
+### ambiguities at beginning of sentence ###
+SMT_amb_before <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                              challenge_set$Classification == "Ambiguity" &
+                              challenge_set$Location == "Before" &
+                              challenge_set$Code == 1))
+SMT_perc_amb_before <- (SMT_amb_before/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                  challenge_set$Classification == "Ambiguity" &
+                                                  challenge_set$Location == "Before"))))*100
+
+CNN_amb_before <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                                  challenge_set$Classification == "Ambiguity" &
+                                  challenge_set$Location == "Before" &
+                                  challenge_set$Code == 1))
+CNN_perc_amb_before <- (CNN_amb_before/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                          challenge_set$Classification == "Ambiguity" &
+                                                          challenge_set$Location == "Before"))))*100
+
+RNN_amb_before <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                                  challenge_set$Classification == "Ambiguity" &
+                                  challenge_set$Location == "Before" &
+                                  challenge_set$Code == 1))
+RNN_perc_amb_before <- (RNN_amb_before/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                          challenge_set$Classification == "Ambiguity" &
+                                                          challenge_set$Location == "Before"))))*100
+
+Att_amb_before <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                                  challenge_set$Classification == "Ambiguity" &
+                                  challenge_set$Location == "Before" &
+                                  challenge_set$Code == 1))
+Att_perc_amb_before <- (Att_amb_before/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                          challenge_set$Classification == "Ambiguity" &
+                                                          challenge_set$Location == "Before"))))*100
+
+Google_amb_before <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                                  challenge_set$Classification == "Ambiguity" &
+                                  challenge_set$Location == "Before" &
+                                  challenge_set$Code == 1))
+Google_perc_amb_before <- (Google_amb_before/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                          challenge_set$Classification == "Ambiguity" &
+                                                          challenge_set$Location == "Before"))))*100
+
+DeepL_amb_before <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                                     challenge_set$Classification == "Ambiguity" &
+                                     challenge_set$Location == "Before" &
+                                     challenge_set$Code == 1))
+DeepL_perc_amb_before <- (DeepL_amb_before/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                                challenge_set$Classification == "Ambiguity" &
+                                                                challenge_set$Location == "Before"))))*100
+
+### ambiguities mid-sentence ###
+SMT_amb_mid <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Location == "Mid" &
+                             challenge_set$Code == 1))
+SMT_perc_amb_mid <- (SMT_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                challenge_set$Classification == "Ambiguity" &
+                                                challenge_set$Location == "Mid"))))*100
+
+CNN_amb_mid <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Location == "Mid" &
+                             challenge_set$Code == 1))
+CNN_perc_amb_mid <- (CNN_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                challenge_set$Classification == "Ambiguity" &
+                                                challenge_set$Location == "Mid"))))*100
+
+RNN_amb_mid <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Location == "Mid" &
+                             challenge_set$Code == 1))
+RNN_perc_amb_mid <- (RNN_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                challenge_set$Classification == "Ambiguity" &
+                                                challenge_set$Location == "Mid"))))*100
+
+Att_amb_mid <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                             challenge_set$Classification == "Ambiguity" &
+                             challenge_set$Location == "Mid" &
+                             challenge_set$Code == 1))
+Att_perc_amb_mid <- (Att_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                challenge_set$Classification == "Ambiguity" &
+                                                challenge_set$Location == "Mid"))))*100
+
+Google_amb_mid <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                                challenge_set$Classification == "Ambiguity" &
+                                challenge_set$Location == "Mid" &
+                                challenge_set$Code == 1))
+Google_perc_amb_mid <- (Google_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                      challenge_set$Classification == "Ambiguity" &
+                                                      challenge_set$Location == "Mid"))))*100
+
+DeepL_amb_mid <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                               challenge_set$Classification == "Ambiguity" &
+                               challenge_set$Location == "Mid" &
+                               challenge_set$Code == 1))
+DeepL_perc_amb_mid <- (DeepL_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                    challenge_set$Classification == "Ambiguity" &
+                                                    challenge_set$Location == "Mid"))))*100
