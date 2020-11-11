@@ -1,10 +1,11 @@
+---
+
 library(tidyverse)
 library(dplyr)
 
 challenge_set <- read.csv("DOAN_2020-08-11_Sentences.csv")
 
 ### overall correct ###
-
 SMT_correct <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                         challenge_set$Code == 1))
 SMT_perc <- (SMT_correct/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT"))))*100
@@ -128,7 +129,6 @@ DeepL_lex <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
 DeepL_perc_lex <- (DeepL_lex/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
                                         challenge_set$Difficulty == "Lexical"))))*100
 
-
 ### syntactic challenges ###
 SMT_syn <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                          challenge_set$Difficulty == "Syntactic" &
@@ -165,3 +165,5 @@ DeepL_syn <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
                            challenge_set$Code == 1))
 DeepL_perc_syn <- (DeepL_syn/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
                                             challenge_set$Difficulty == "Syntactic"))))*100
+
+###
