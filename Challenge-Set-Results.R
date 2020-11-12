@@ -492,3 +492,8 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                                                          DeepL_perc_amb_mid <- (DeepL_amb_mid/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
                                                                                                              challenge_set$Classification == "Ambiguity" &
                                                                                                              challenge_set$Location == "Mid"))))*100))
+
+
+long_df = setNames(data.frame(t(results_df[,-1])), results_df[,1])
+
+write_csv(long_df, "Results.csv")
