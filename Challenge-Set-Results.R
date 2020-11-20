@@ -41,12 +41,18 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                                             DeepL_short <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
                                                                        challenge_set$Short_Long == "S" &
                                                                        challenge_set$Code == 1))),
-                         "Perc correct short" = c(SMT_perc_S <- (SMT_short/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT"))))*100,
-                                                  RNN_perc_S <- (RNN_short/(nrow(filter(challenge_set,challenge_set$System == "RNN"))))*100,
-                                                  CNN_perc_S <- (CNN_short/(nrow(filter(challenge_set,challenge_set$System == "CNN"))))*100,
-                                                  Att_perc_S <- (Att_short/(nrow(filter(challenge_set,challenge_set$System == "Attention"))))*100,
-                                                  Google_perc_S <- (Google_short/(nrow(filter(challenge_set,challenge_set$System == "Google"))))*100,
-                                                  DeepL_perc_S <- (DeepL_short/(nrow(filter(challenge_set,challenge_set$System == "DeepL"))))*100),
+                         "Perc correct short" = c(SMT_perc_S <- (SMT_short/(nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
+                                                                                          challenge_set$Short_Long == "S"))))*100,
+                                                  RNN_perc_S <- (RNN_short/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                                                          challenge_set$Short_Long == "S"))))*100,
+                                                  CNN_perc_S <- (CNN_short/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                                                          challenge_set$Short_Long == "S"))))*100,
+                                                  Att_perc_S <- (Att_short/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                                                          challenge_set$Short_Long == "S"))))*100,
+                                                  Google_perc_S <- (Google_short/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                                                                challenge_set$Short_Long == "S"))))*100,
+                                                  DeepL_perc_S <- (DeepL_short/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                                                              challenge_set$Short_Long == "S"))))*100),
                          "Correct long" = c(SMT_long <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                                                                     challenge_set$Short_Long == "L" &
                                                                     challenge_set$Code == 1)),
@@ -65,12 +71,18 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                                             DeepL_long <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
                                                                       challenge_set$Short_Long == "L" &
                                                                       challenge_set$Code == 1))),
-                         "Perc correct long" = c(SMT_perc_L <- (SMT_long/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT"))))*100,
-                                                 RNN_perc_L <- (RNN_long/(nrow(filter(challenge_set,challenge_set$System == "RNN"))))*100,
-                                                 CNN_perc_L <- (CNN_long/(nrow(filter(challenge_set,challenge_set$System == "CNN"))))*100,
-                                                 Att_perc_L <- (Att_long/(nrow(filter(challenge_set, challenge_set$System == "Attention"))))*100,
-                                                 Google_perc_L <- (Google_long/(nrow(filter(challenge_set,challenge_set$System == "Google"))))*100,
-                                                 DeepL_perc_L <- (DeepL_long/(nrow(filter(challenge_set,challenge_set$System == "DeepL"))))*100),
+                         "Perc correct long" = c(SMT_perc_L <- (SMT_long/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                                                                                        challenge_set$Short_Long == "L"))))*100,
+                                                 RNN_perc_L <- (RNN_long/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                                                        challenge_set$Short_Long == "L"))))*100,
+                                                 CNN_perc_L <- (CNN_long/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                                                        challenge_set$Short_Long == "L"))))*100,
+                                                 Att_perc_L <- (Att_long/(nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                                                                                        challenge_set$Short_Long == "L"))))*100,
+                                                 Google_perc_L <- (Google_long/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                                                              challenge_set$Short_Long == "L"))))*100,
+                                                 DeepL_perc_L <- (DeepL_long/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                                                            challenge_set$Short_Long == "L"))))*100),
                          "Correct lexical" = c(SMT_lex <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                                                                       challenge_set$Difficulty == "Lexical" &
                                                                       challenge_set$Code == 1)),
@@ -197,22 +209,22 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                                                                                    challenge_set$Difficulty == "Lexical" &
                                                                                    challenge_set$Classification == "Homographs" &
                                                                                    challenge_set$Code == 1))),
-                         "Perc correct homographs" = c(SMT_perc_homograph <- (SMT_homograph/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
+                         "Perc correct homographs" = c(SMT_perc_homograph <- (SMT_homograph/(nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                                                                                                         challenge_set$Difficulty == "Lexical" &
                                                                                                         challenge_set$Classification == "Homographs"))))*100,
-                                                    CNN_perc_homograph <- (CNN_homograph/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                    CNN_perc_homograph <- (CNN_homograph/(nrow(filter(challenge_set, challenge_set$System == "CNN" &
                                                                                                         challenge_set$Difficulty == "Lexical" &
                                                                                                         challenge_set$Classification == "Homographs"))))*100,
-                                                    RNN_perc_homograph <- (RNN_homograph/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
+                                                    RNN_perc_homograph <- (RNN_homograph/(nrow(filter(challenge_set, challenge_set$System == "RNN" &
                                                                                                         challenge_set$Difficulty == "Lexical" &
                                                                                                         challenge_set$Classification == "Homographs"))))*100,
-                                                    Att_perc_homograph <- (Att_homograph/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
+                                                    Att_perc_homograph <- (Att_homograph/(nrow(filter(challenge_set, challenge_set$System == "Attention" &
                                                                                                         challenge_set$Difficulty == "Lexical" &
                                                                                                         challenge_set$Classification == "Homographs"))))*100,
-                                                    Google_perc_homograph <- (Google_homograph/(nrow(filter(challenge_set,challenge_set$System == "Google" &
+                                                    Google_perc_homograph <- (Google_homograph/(nrow(filter(challenge_set, challenge_set$System == "Google" &
                                                                                                               challenge_set$Difficulty == "Lexical" &
                                                                                                               challenge_set$Classification == "Homographs"))))*100,
-                                                    DeepL_perc_homograph <- (Att_homograph/(nrow(filter(challenge_set,challenge_set$System == "DeepL" &
+                                                    DeepL_perc_homograph <- (DeepL_homograph/(nrow(filter(challenge_set, challenge_set$System == "DeepL" &
                                                                                                           challenge_set$Difficulty == "Lexical" &
                                                                                                           challenge_set$Classification == "Homographs"))))*100),
                          "Correct scope-related" = c(SMT_scope <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
@@ -496,4 +508,4 @@ results_df <- data.frame("System" = unique(challenge_set$System),
 
 long_df = setNames(data.frame(t(results_df[,-1])), results_df[,1])
 
-write_csv(long_df, "Results.csv")
+write.table(long_df, "Results_v2.csv", row.names = TRUE, col.names = NA, sep = ",")
