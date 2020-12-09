@@ -26,26 +26,26 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                          "Correct short" = c(SMT_short <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                                                                       challenge_set$Short_Long == "S" &
                                                                       challenge_set$Code == 1)),
-                                            RNN_short <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
-                                                                     challenge_set$Short_Long == "S" &
-                                                                     challenge_set$Code == 1)),
-                                            CNN_short <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
-                                                                     challenge_set$Short_Long == "S" &
-                                                                     challenge_set$Code == 1)),
-                                            Att_short <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
-                                                                     challenge_set$Short_Long == "S" &
-                                                                     challenge_set$Code == 1)),
-                                            Google_short <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                                             CNN_short <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
                                                                         challenge_set$Short_Long == "S" &
                                                                         challenge_set$Code == 1)),
-                                            DeepL_short <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
+                                             RNN_short <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                                                                     challenge_set$Short_Long == "S" &
+                                                                     challenge_set$Code == 1)),
+                                             Att_short <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
+                                                                     challenge_set$Short_Long == "S" &
+                                                                     challenge_set$Code == 1)),
+                                             Google_short <- nrow(filter(challenge_set, challenge_set$System == "Google" &
+                                                                        challenge_set$Short_Long == "S" &
+                                                                        challenge_set$Code == 1)),
+                                             DeepL_short <- nrow(filter(challenge_set, challenge_set$System == "DeepL" &
                                                                        challenge_set$Short_Long == "S" &
                                                                        challenge_set$Code == 1))),
                          "Perc correct short" = c(SMT_perc_S <- (SMT_short/(nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                                                                                           challenge_set$Short_Long == "S"))))*100,
-                                                  RNN_perc_S <- (RNN_short/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
-                                                                                          challenge_set$Short_Long == "S"))))*100,
                                                   CNN_perc_S <- (CNN_short/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                                                          challenge_set$Short_Long == "S"))))*100,
+                                                  RNN_perc_S <- (RNN_short/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
                                                                                           challenge_set$Short_Long == "S"))))*100,
                                                   Att_perc_S <- (Att_short/(nrow(filter(challenge_set,challenge_set$System == "Attention" &
                                                                                           challenge_set$Short_Long == "S"))))*100,
@@ -56,12 +56,12 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                          "Correct long" = c(SMT_long <- nrow(filter(challenge_set, challenge_set$System == "Hybrid SMT" &
                                                                     challenge_set$Short_Long == "L" &
                                                                     challenge_set$Code == 1)),
-                                            RNN_long <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
-                                                                    challenge_set$Short_Long == "L" &
-                                                                    challenge_set$Code == 1)),
                                             CNN_long <- nrow(filter(challenge_set, challenge_set$System == "CNN" &
                                                                     challenge_set$Short_Long == "L" &
                                                                     challenge_set$Code == 1)),
+                                            RNN_long <- nrow(filter(challenge_set, challenge_set$System == "RNN" &
+                                                                      challenge_set$Short_Long == "L" &
+                                                                      challenge_set$Code == 1)),
                                             Att_long <- nrow(filter(challenge_set, challenge_set$System == "Attention" &
                                                                     challenge_set$Short_Long == "L" &
                                                                     challenge_set$Code == 1)),
@@ -73,9 +73,9 @@ results_df <- data.frame("System" = unique(challenge_set$System),
                                                                       challenge_set$Code == 1))),
                          "Perc correct long" = c(SMT_perc_L <- (SMT_long/(nrow(filter(challenge_set,challenge_set$System == "Hybrid SMT" &
                                                                                         challenge_set$Short_Long == "L"))))*100,
-                                                 RNN_perc_L <- (RNN_long/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
-                                                                                        challenge_set$Short_Long == "L"))))*100,
                                                  CNN_perc_L <- (CNN_long/(nrow(filter(challenge_set,challenge_set$System == "CNN" &
+                                                                                        challenge_set$Short_Long == "L"))))*100,
+                                                 RNN_perc_L <- (RNN_long/(nrow(filter(challenge_set,challenge_set$System == "RNN" &
                                                                                         challenge_set$Short_Long == "L"))))*100,
                                                  Att_perc_L <- (Att_long/(nrow(filter(challenge_set, challenge_set$System == "Attention" &
                                                                                         challenge_set$Short_Long == "L"))))*100,
