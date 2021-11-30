@@ -6,3 +6,6 @@ Machine translation (MT) as a field of research has known significant advances i
 
 # Description
 Here you will find our original challenge set, as established at the beginning of the writing of this thesis, as well as a modified version that takes into account changes that we believe, after thorough analysis of our results, will improve the challenge set.
+
+# Note
+Updated challenge set to be published shortly
